@@ -235,52 +235,52 @@ export default function HomePage() {
             className="w-full h-full object-cover"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0C1020]/30 via-[#0C1020]/10 to-[#0C1020]/88" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0C1020]/40 to-transparent" />
+        {/* Dark gradient overlay: bottom-left (darker) to top-right (lighter) */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(13,27,42,0.65)] to-[rgba(13,27,42,0.2)]" />
 
         <motion.div style={{ opacity: heroOpacity }}
-          className="relative z-10 px-6 md:px-10 pb-12 md:pb-20 max-w-[1400px] mx-auto w-full">
+          className="relative z-10 px-6 md:px-20 pb-20 md:pb-20 pt-36 md:pt-36 max-w-[1400px] mx-auto w-full">
           <motion.p
             initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[0.65rem] tracking-[0.3em] uppercase text-[#B8975A] mb-5">
+            className="text-[0.65rem] tracking-[0.3em] uppercase text-[#C9A84C] mb-5">
             {t.hero.location}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="font-light leading-[0.9] text-white mb-8"
-            style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(3rem, 8.5vw, 8.5rem)', maxWidth: '14ch' }}>
+            className="font-bold leading-[0.9] text-white mb-8"
+            style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 8.5vw, 4rem)', maxWidth: '600px', letterSpacing: '-0.5px' }}>
             {t.hero.headline1}<br />{t.hero.headline2}{' '}
-            <em className="italic" style={{ color: '#B8975A' }}>{t.hero.headlineItalic}</em>
+            <em className="italic font-normal" style={{ color: '#C9A84C', fontFamily: 'Cormorant Garamond, var(--font-display)' }}>{t.hero.headlineItalic}</em>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            className="text-white/60 text-sm leading-[1.8] mb-10 max-w-[40ch]">
+            className="text-white/70 leading-[1.6] mb-10 max-w-[480px]"
+            style={{ fontSize: '16px' }}>
             {t.hero.sub}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col sm:flex-row gap-3">
+            className="flex flex-col sm:flex-row gap-4">
             <Link to="/properties"
-              className="inline-flex items-center justify-center gap-3 px-7 py-3.5 text-[0.7rem] font-medium tracking-[0.15em] uppercase bg-[#B8975A] text-[#0C1020] hover:bg-[#9B7D42] transition-colors">
-              {t.hero.cta1}
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-              </svg>
+              className="inline-flex items-center justify-center gap-3 px-7 py-3.5 text-[0.7rem] font-bold tracking-[0.15em] uppercase bg-[#C9A84C] text-[#0D1B2A] hover:bg-[#B8975A] transition-colors">
+              {t.hero.cta1} →
             </Link>
             <a href="/#contact"
-              className="inline-flex items-center justify-center gap-3 px-7 py-3.5 text-[0.7rem] font-medium tracking-[0.15em] uppercase bg-transparent text-white border border-white/30 hover:border-[#B8975A] hover:text-[#B8975A] transition-colors">
+              className="inline-flex items-center justify-center gap-3 px-7 py-3.5 text-[0.7rem] font-medium tracking-[0.15em] uppercase bg-transparent text-white hover:text-[#C9A84C] hover:border-[#C9A84C] transition-colors"
+              style={{ border: '1.5px solid white' }}>
               {t.hero.cta2}
             </a>
           </motion.div>
         </motion.div>
 
-        <div className="absolute bottom-8 right-8 md:right-12 z-10 flex-col items-center gap-2 hidden md:flex">
-          <span className="text-[0.55rem] tracking-[0.2em] uppercase text-white/30 rotate-90 mb-8">Scroll</span>
-          <div className="w-[1px] h-14 bg-gradient-to-b from-transparent to-[#B8975A]/60 animate-[scrollPulse_2.5s_ease-in-out_infinite]" />
+        {/* Scroll indicator - repositioned to bottom-left */}
+        <div className="absolute bottom-8 left-8 md:left-12 z-10 flex flex-col items-center gap-2 hidden md:flex">
+          <span className="text-[0.55rem] tracking-[0.2em] uppercase text-white/50 rotate-90 mb-8">Scroll</span>
+          <div className="w-[2px] h-14 bg-gradient-to-b from-transparent to-[#C9A84C]/80 animate-[scrollPulse_2.5s_ease-in-out_infinite]" />
         </div>
       </section>
 
